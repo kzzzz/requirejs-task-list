@@ -9,7 +9,12 @@ gulp.task('scripts', function () {
                 jquery: 'lib/jquery-2.1.4.min'
             }
         }))
-        .pipe(gulp.dest('src/js/build/'));
+        .pipe(gulp.dest('build/js/'));
 });
 
-gulp.task('default', ['scripts']);
+gulp.task('html', function(){
+    return gulp.src('src/index.html')
+        .pipe(gulp.dest('build/'));
+});
+
+gulp.task('default', ['scripts','html']);
